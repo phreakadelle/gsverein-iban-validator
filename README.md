@@ -1,5 +1,5 @@
-# IBAN Validierung für GS-Verein
-Mit diesem Programm können die IBAN Daten der Vereinsmitglieder validiert werden. Das Programm ist deshalb enstanden, da es in GS-Verein keine Möglichkeit gibt, die IBAN Daten bei Eingabe zu validieren.
+# IBAN Prüfung für GS-Verein
+Mit diesem Programm können die IBAN Daten der Vereinsmitglieder validiert und so überprüft werden. Das Programm ist deshalb enstanden, da es in GS-Verein keine Möglichkeit gibt, die IBAN Daten bei Eingabe zu validieren.
 
 So kann man sicherstellen, dass die eingegeben IBAN Daten korrekt sind und wird nicht erst unmittelbar vor dem Beitragseinzug darauf hingewiesen.
 
