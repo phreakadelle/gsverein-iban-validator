@@ -15,16 +15,13 @@ www.java.com
 Die Datei speicherst du entweder bei dir im Download-Ordner ab oder z.B. direkt auf _C:/_ um es im nächsten Schritt einfacher zu haben.
 
 3. Du öffnest eine Kommando-Zeile (Start -> Ausführen -> "cmd"). Je nachdem, wo du deine CSV Datei und das Programm gespeichert hast, muss t du nun zu dem Ordner navigieren, z.B. mit "cd .. ". 
-
 Wenn du aber die CSV Datei und das Programm direkt auf C:/ gespeichert hast, dann gibst du in dem schwarzen Fenster nur ein
 ```
 cd \
 java -jar gsverein-iban-tool.jar --input Mappe1.csv
 java -jar gsverein-iban-tool.jar --input Mappe1.csv --output Ausgabe.csv
 ```
-
 Die Bildschirm-Ausgabe müsste nun in etwa so aussehen:
 ![Alt text](/src/site/resources/2016-11-18_120801.jpg?raw=true "Beispielausgabe")
-
 
 4. Du kannst nun auf dem Bildschirm die falschen Datensätze erkennen. Hast du das Programm mit dem Parameter "--output" gestartet, dann solltest du auch eine Datei mit dem angegeben Namen finden, wo nochmal alle Datensätze zu finden sind.
