@@ -10,4 +10,5 @@ www.java.com
 # Vorgehen
 1. Damit das Programm funktioniert, müssen die Mitgliesdaten nach Excel exportiert werden. Dazu muss folgendes Format eingehalten werden...
 2. Danach öffnet ihr die exportierte Datei und speichert Sie als "CSV (DOS Format)" ab.
-3. Ihr öffnet eine Kommando-Zeile (Start -> Ausführen -> "cmd")
+3. Ihr öffnet eine Kommando-Zeile (Start -> Ausführen -> "cmd") und gebt ein "java -jar GSVereinIBANValidator.jar --input C:/Pfad/Zu/Eurer/CSV/Datei.csv"
+4. Auf der Bildschirmausgabe könnt ihr nun die falschen Daten erkennen.
