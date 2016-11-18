@@ -19,6 +19,9 @@ Wenn du aber die CSV Datei und das Programm direkt auf C:/ gespeichert hast, dan
 ```
 cd \
 java -jar gsverein-iban-tool.jar --input Mappe1.csv
+
+ODER
+
 java -jar gsverein-iban-tool.jar --input Mappe1.csv --output Ausgabe.csv
 ```
 Die Bildschirm-Ausgabe müsste nun in etwa so aussehen:
