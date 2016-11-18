@@ -46,7 +46,7 @@ public class IBANValidator {
 		} catch (Exception e) {
 			throw new Exception("Fehler beim Lesen der Datei: " + pFilePath, e);
 		} finally {
-			LOGGER.info("Anzahl ueberpruefter Datensaetze: " + counter);
+			LOGGER.info("Ueberpruefte Datensaetze. Anzahl: " + counter + " Fehlerhaft: " + retVal.size());
 		}
 		return retVal;
 	}
@@ -87,23 +87,23 @@ class OutputLog implements AutoCloseable {
 
 	final static String LINESEP = System.getProperty("line.separator");
 	final static Logger LOGGER = Logger.getLogger(OutputLog.class);
-	
-	final File mOutFile;
+
+	final String mOutPath;
 	BufferedWriter mOut;
 
-	
 	public OutputLog(final String pOutPath) {
-		mOutFile = new File(pOutPath);
+		mOutPath = pOutPath;
 	}
 
 	public void write(final String pLine) throws IOException {
-		if (mOutFile == null) {
+		if (mOutPath == null) {
 			return;
 		}
 
 		if (mOut == null) {
-			mOut = new BufferedWriter(new FileWriter(mOutFile));
-			LOGGER.info("Ausgabe-Datei: " + mOutFile.getAbsolutePath());
+			final File file = new File(mOutPath);
+			mOut = new BufferedWriter(new FileWriter(file));
+			LOGGER.info("Ausgabe-Datei: " + file.getAbsolutePath());
 		}
 
 		mOut.write(pLine);

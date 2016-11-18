@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.dieboldnixdorf.iban</groupId>
 	<artifactId>iban-validator</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -51,7 +51,7 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>com.wincornixdorf.ps.tools.mks.starter.MKSToGitCLI</mainClass>
+							<mainClass>info.watermeyer.gsverein.IBANValidatorStarter</mainClass>
 							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
 							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
 						</manifest>
@@ -59,6 +59,8 @@
 					<descriptorRefs>
 						<descriptorRef>jar-with-dependencies</descriptorRef>
 					</descriptorRefs>
+					<appendAssemblyId>false</appendAssemblyId>
+					<finalName>gsverein-iban-tool</finalName>
 				</configuration>
 				<executions>
 					<execution>
