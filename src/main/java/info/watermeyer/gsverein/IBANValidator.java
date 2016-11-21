@@ -56,13 +56,17 @@ public class IBANValidator {
 		String[] split = pLine.split(";");
 		try {
 			// System.out.println(line);
-			String iban = split[2];
-			if (iban.length() > 22) {
-				retVal = createMessage(pLine, "zu lang");
-			} else if (iban.length() < 22) {
-				retVal = createMessage(pLine, "zu kurz");
-			} else if (!pValidator.isValid(iban)) {
-				retVal = createMessage(pLine, "ungueltig");
+			if (split.length < 3) {
+				retVal = createMessage(pLine, "Zeile ungueltig. Keine IBAN in Feld 3");
+			} else {
+				String iban = split[2];
+				if (iban.length() > 22) {
+					retVal = createMessage(pLine, "zu lang");
+				} else if (iban.length() < 22) {
+					retVal = createMessage(pLine, "zu kurz");
+				} else if (!pValidator.isValid(iban)) {
+					retVal = createMessage(pLine, "ungueltig");
+				}
 			}
 		} catch (Exception e) {
 			LOGGER.warn("Fehler beim Verarbeiten der Zeile: '" + pLine + "' Fehler: " + e.getMessage(), e);

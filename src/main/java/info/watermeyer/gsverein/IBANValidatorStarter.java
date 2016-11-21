@@ -1,5 +1,7 @@
 package info.watermeyer.gsverein;
 
+import java.util.List;
+
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
@@ -35,7 +37,10 @@ public class IBANValidatorStarter {
 				final String output = cmd.getOptionValue("output");
 				
 				final IBANValidator v = new IBANValidator();
-				v.validate(input, output);
+				List<String> validate = v.validate(input, output);
+				
+				// Maybe 0, or the count of failed entries
+				retVal = validate.size();
 			}
 		} catch (ParseException e) {
 			LOGGER.warn(e.getMessage());
