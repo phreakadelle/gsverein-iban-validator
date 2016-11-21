@@ -59,7 +59,7 @@ public class IBANValidator {
 			if (split.length < 3) {
 				retVal = createMessage(pLine, "Zeile ungueltig. Keine IBAN in Feld 3");
 			} else {
-				String iban = split[2];
+				final String iban = split[2];
 				if (iban.length() > 22) {
 					retVal = createMessage(pLine, "zu lang");
 				} else if (iban.length() < 22) {
@@ -67,6 +67,8 @@ public class IBANValidator {
 				} else if (!pValidator.isValid(iban)) {
 					retVal = createMessage(pLine, "ungueltig");
 				}
+
+				final String bic = split[3];
 			}
 		} catch (Exception e) {
 			LOGGER.warn("Fehler beim Verarbeiten der Zeile: '" + pLine + "' Fehler: " + e.getMessage(), e);
