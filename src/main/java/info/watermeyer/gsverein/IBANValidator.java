@@ -12,6 +12,8 @@ import java.util.List;
 import org.apache.commons.validator.routines.checkdigit.IBANCheckDigit;
 import org.apache.log4j.Logger;
 
+import fr.marcwrobel.jbanking.bic.Bic;
+
 public class IBANValidator {
 
 	private final static Logger LOGGER = Logger.getLogger(IBANValidator.class);
@@ -58,6 +60,8 @@ public class IBANValidator {
 			// System.out.println(line);
 			if (split.length < 3) {
 				retVal = createMessage(pLine, "Zeile ungueltig. Keine IBAN in Feld 3");
+			} else 	if (split.length < 4) {
+				retVal = createMessage(pLine, "Zeile ungueltig. Keine BIC in Feld 4");
 			} else {
 				final String iban = split[2];
 				if (iban.length() > 22) {
@@ -66,9 +70,9 @@ public class IBANValidator {
 					retVal = createMessage(pLine, "zu kurz");
 				} else if (!pValidator.isValid(iban)) {
 					retVal = createMessage(pLine, "ungueltig");
+				} else if(!Bic.isValid(split[3])) {
+					retVal = createMessage(pLine, "BIC falsch");
 				}
-
-				final String bic = split[3];
 			}
 		} catch (Exception e) {
 			LOGGER.warn("Fehler beim Verarbeiten der Zeile: '" + pLine + "' Fehler: " + e.getMessage(), e);
